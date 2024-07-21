@@ -15,13 +15,13 @@
                             aria-label="First name"
                             type="text"
                             name="first"
-                            defaultValue= <%= contact?.first %>
+                            value= <%= contact?.first %>
                         >
                         <input placeholder="Last"
                             aria-label="Last name"
                             type="text"
                             name="last"
-                            defaultValue= <%= contact?.last %>
+                            Value= <%= contact?.last %>
                         >
                     </p>
                     <label>
@@ -30,7 +30,7 @@
                           type="text"
                           name="twitter"
                           placeholder="@jack"
-                          defaultValue= <%= contact?.twitter %>
+                          Value= <%= contact?.twitter %>
                         >
                     </label>
                     <label>
@@ -38,12 +38,11 @@
                         <textarea
                           name="notes"
                           rows="6"
-                          defaultValue= <%= contact?.notes %>
-                        ></textarea>
+                        > <%= contact?.notes %></textarea>
                     </label>
                     <p>
                         <button type="submit">Save</button>
-                        <button type="button">Cancel</button>
+                        <a href= <%-`/${contact.id}` %> >Cancel</a>
                     </p>
                 </form>
             </div>
