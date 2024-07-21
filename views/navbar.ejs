@@ -1,0 +1,38 @@
+<div id="sidebar">
+    <h1>Contacts</h1>
+    <div>
+      <form method="get" action="/search">
+        <input id="q" aria-label="Search Contacts"
+          placeholder="Search"
+          type="search"
+          name="q"
+        >
+        <div id="search-spinner" aria-hidden hidden="true"></div>
+        <div class="sr-only" aria-live="polite"></div>
+      </form>
+      <form method="post" action="/addNew">
+        <button type="submit">New</button>
+      </form>
+    </div>
+    <nav>
+      <% if(contacts.length) { %>
+        <ul>
+          <% contacts.map((contact) => { %>
+            <li key=<%= contact.id %>>
+              <a  href=<%-`/${contact.id}` %> >
+                <% if(contact.first || contact.last) {%>
+                  <span><%= contact.first%> <%= contact.last%></span>
+                  <% } else { %>
+                  <i>No name</i>
+                  <% } %> 
+              </a>
+            </li> 
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>
+          <i>No contacts</i>
+        </p>
+      <% } %>
+    </nav>
+  </div>

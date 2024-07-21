@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Contacts</title>
+    <link rel='stylesheet' href='stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div id="root">
+      <%- include('navbar', {contacts: contacts}) %>
+      <div id="detail">
+      </div>
+    </div>
   </body>
 </html>
